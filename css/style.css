@@ -83,7 +83,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .hero-bg{position:absolute;inset:0;z-index:0}
 
 /* Spider web pattern */
-.hero-web{position:absolute;inset:0;opacity:0.12;background-image:url("../assets/jaring.jpg");background-size:cover;background-position:center;pointer-events:none;mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%)}
+.hero-web{position:absolute;inset:0;pointer-events:none}
 
 .hero-glow{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none}
 .glow-1{width:600px;height:600px;background:rgba(226,54,54,0.07);top:-200px;right:-200px}
@@ -311,12 +311,10 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 @keyframes snapRing{0%{transform:scale(.3);opacity:1}100%{transform:scale(1);opacity:0}}
 
 /* ============================================
-   SPIDER-MAN DECORATIONS
+   SPIDER-MAN DECORATIONS (ALL SECTIONS)
    ============================================ */
 .hero-hanging{position:absolute;top:-20px;right:5%;width:140px;z-index:2;pointer-events:none;animation:hangingSwing 4s ease-in-out infinite;transform-origin:top center;opacity:0.85}
 @keyframes hangingSwing{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
-
-.section-divider{width:100%;height:60px;object-fit:cover;display:block;opacity:0.15;pointer-events:none;user-select:none}
 
 .hero-comic{position:absolute;bottom:15%;left:5%;width:100px;z-index:2;pointer-events:none;animation:comicPop 0.8s ease forwards;animation-delay:1.5s;opacity:0;transform:scale(0) rotate(-15deg)}
 @keyframes comicPop{0%{opacity:0;transform:scale(0) rotate(-15deg)}60%{opacity:1;transform:scale(1.1) rotate(5deg)}100%{opacity:0.9;transform:scale(1) rotate(0deg)}}
@@ -326,6 +324,33 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 
 .hero-tanda{position:absolute;bottom:8%;right:8%;width:90px;z-index:2;pointer-events:none;opacity:0.15;animation:tandaPulse 3s ease-in-out infinite}
 @keyframes tandaPulse{0%,100%{opacity:0.15;transform:scale(1)}50%{opacity:0.25;transform:scale(1.05)}}
+
+.section-divider{width:100%;height:60px;object-fit:cover;display:block;opacity:0.15;pointer-events:none;user-select:none}
+
+/* About section decorations */
+.about{position:relative;overflow:hidden}
+.about .section-deco-left{position:absolute;top:10%;left:-30px;width:120px;opacity:0.08;pointer-events:none;transform:rotate(-15deg)}
+.about .section-deco-right{position:absolute;bottom:10%;right:-20px;width:100px;opacity:0.08;pointer-events:none;transform:rotate(10deg)}
+
+/* Skills section decorations */
+.skills{position:relative;overflow:hidden}
+.skills .section-deco{position:absolute;top:50%;right:-40px;width:130px;opacity:0.06;pointer-events:none;transform:translateY(-50%) rotate(15deg)}
+
+/* Projects section decorations */
+.projects{position:relative;overflow:hidden}
+.projects .section-deco{position:absolute;top:20px;left:-30px;width:110px;opacity:0.07;pointer-events:none;transform:rotate(-10deg)}
+
+/* Experience section decorations */
+.experience{position:relative;overflow:hidden}
+.experience .section-deco-left{position:absolute;top:15%;left:-20px;width:100px;opacity:0.06;pointer-events:none;transform:rotate(12deg)}
+.experience .section-deco-right{position:absolute;bottom:15%;right:-25px;width:110px;opacity:0.06;pointer-events:none;transform:rotate(-8deg)}
+
+/* Contact section decorations */
+.contact{position:relative;overflow:hidden}
+.contact .section-deco{position:absolute;bottom:20px;right:20px;width:90px;opacity:0.08;pointer-events:none;transform:rotate(5deg)}
+
+/* Web corner accent on each section */
+.section::after{content:'';position:absolute;top:0;right:0;width:120px;height:120px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='120' cy='0' r='50' fill='none' stroke='%23e23636' stroke-width='0.5'/%3E%3Ccircle cx='120' cy='0' r='80' fill='none' stroke='%23e23636' stroke-width='0.3'/%3E%3Cline x1='120' y1='0' x2='80' y2='80' stroke='%23e23636' stroke-width='0.4'/%3E%3Cline x1='120' y1='0' x2='40' y2='60' stroke='%23e23636' stroke-width='0.3'/%3E%3Cline x1='120' y1='0' x2='120' y2='100' stroke='%23e23636' stroke-width='0.3'/%3E%3C/svg%3E");background-size:contain;background-repeat:no-repeat;opacity:0.15;pointer-events:none}
 
 /* ============================================
    FLOAT / PARALLAX PROFILE
