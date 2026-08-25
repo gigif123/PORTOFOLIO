@@ -86,7 +86,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .hero-bg{position:absolute;inset:0;z-index:0}
 
 /* Spider web pattern */
-.hero-web{position:absolute;inset:0;pointer-events:none}
+.hero-web{position:absolute;inset:0;pointer-events:none;background:url('../assets/jaring-removebg-preview.png') center/cover no-repeat;opacity:0.1}
 
 .hero-glow{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none}
 .glow-1{width:600px;height:600px;background:rgba(226,54,54,0.07);top:-200px;right:-200px}
@@ -318,7 +318,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
    ============================================ */
 
 /* Hero - hanging Spider-Man next to profile photo */
-.hero-hanging-front{position:absolute;top:80px;left:calc(50% - 240px);width:200px;z-index:10;pointer-events:none;animation:hangingSwing 4s ease-in-out infinite;transform-origin:top center}
+.hero-hanging-front{position:absolute;top:80px;left:calc(100% - 240px);width:200px;z-index:10;pointer-events:none;animation:hangingSwing 4s ease-in-out infinite;transform-origin:top center}
 @keyframes hangingSwing{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
 @keyframes hangingSwing{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
 
