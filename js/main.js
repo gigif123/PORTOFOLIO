@@ -6,10 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Loading Screen ----
   const loader = document.getElementById('loader');
+  const showWebLines = () => {
+    const wl = document.querySelector('.hero-web-lines');
+    if (wl) wl.classList.add('show');
+  };
   window.addEventListener('load', () => {
-    setTimeout(() => loader.classList.add('hide'), 600);
+    setTimeout(() => { loader.classList.add('hide'); showWebLines(); }, 600);
   });
-  setTimeout(() => loader.classList.add('hide'), 3000);
+  setTimeout(() => { loader.classList.add('hide'); showWebLines(); }, 3000);
 
   // ---- Scroll to Top ----
   const scrollTopBtn = document.getElementById('scroll-top');
@@ -262,5 +266,102 @@ document.addEventListener('DOMContentLoaded', () => {
   closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // ============================================
+  //  SPIDER-MAN EFFECTS
+  // ============================================
+
+  // ---- Web Trail Cursor ----
+  const canvas = document.createElement('canvas');
+  canvas.id = 'web-canvas';
+  canvas.style.cssText = 'position:fixed;inset:0;z-index:9998;pointer-events:none';
+  document.body.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+  let W, H;
+  const resize = () => { W = canvas.width = innerWidth; H = canvas.height = innerHeight; };
+  resize();
+  addEventListener('resize', resize);
+
+  const dots = [];
+  const MAX_DOTS = 18;
+  let mouseX = -100, mouseY = -100;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (dots.length < MAX_DOTS) {
+      dots.push({ x: mouseX, y: mouseY, life: 1 });
+    }
+  });
+
+  const drawTrail = () => {
+    ctx.clearRect(0, 0, W, H);
+    for (let i = dots.length - 1; i >= 0; i--) {
+      const d = dots[i];
+      d.life -= 0.035;
+      if (d.life <= 0) { dots.splice(i, 1); continue; }
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, 2 * d.life, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(226,54,54,${d.life * 0.5})`;
+      ctx.fill();
+      if (i > 0) {
+        const prev = dots[i - 1];
+        ctx.beginPath();
+        ctx.moveTo(d.x, d.y);
+        ctx.lineTo(prev.x, prev.y);
+        ctx.strokeStyle = `rgba(226,54,54,${d.life * 0.25})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    }
+    requestAnimationFrame(drawTrail);
+  };
+  drawTrail();
+
+  // ---- Hero Web-Shoot Lines ----
+  const heroWeb = document.querySelector('.hero-web');
+  if (heroWeb) {
+    const webLines = document.createElement('div');
+    webLines.className = 'hero-web-lines';
+    webLines.innerHTML = `
+      <svg class="web-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+        <line class="web-line wl-1" x1="400" y1="300" x2="400" y2="0"/>
+        <line class="web-line wl-2" x1="400" y1="300" x2="800" y2="300"/>
+        <line class="web-line wl-3" x1="400" y1="300" x2="0" y2="300"/>
+        <line class="web-line wl-4" x1="400" y1="300" x2="800" y2="0"/>
+        <line class="web-line wl-5" x1="400" y1="300" x2="0" y2="0"/>
+        <line class="web-line wl-6" x1="400" y1="300" x2="800" y2="600"/>
+        <line class="web-line wl-7" x1="400" y1="300" x2="0" y2="600"/>
+        <circle class="web-circle wc-1" cx="400" cy="300" r="80"/>
+        <circle class="web-circle wc-2" cx="400" cy="300" r="160"/>
+        <circle class="web-circle wc-3" cx="400" cy="300" r="260"/>
+      </svg>`;
+    heroWeb.appendChild(webLines);
+  }
+
+  // ---- Scroll-triggered web snap effect on project cards ----
+  document.addEventListener('click', (e) => {
+    const card = e.target.closest('.project-card');
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const snap = document.createElement('div');
+    snap.className = 'web-snap';
+    snap.style.cssText = `left:${rect.left + rect.width / 2}px;top:${rect.top + rect.height / 2}px`;
+    document.body.appendChild(snap);
+    setTimeout(() => snap.remove(), 800);
+  });
+
+  // ---- Parallax glow on mouse move (hero only) ----
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    hero.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / innerWidth - 0.5) * 30;
+      const y = (e.clientY / innerHeight - 0.5) * 30;
+      const glow1 = document.querySelector('.glow-1');
+      const glow2 = document.querySelector('.glow-2');
+      if (glow1) glow1.style.transform = `translate(${x}px, ${y}px)`;
+      if (glow2) glow2.style.transform = `translate(${-x}px, ${-y}px)`;
+    });
+  }
 
 });
