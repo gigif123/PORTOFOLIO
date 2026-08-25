@@ -358,6 +358,12 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .contact{position:relative;overflow:hidden}
 .contact .section-deco{position:absolute;bottom:20px;right:20px;width:80px;opacity:0.1;pointer-events:none}
 
+/* Footer - tiduran spider */
+.footer-tiduran{display:block;width:150px;margin:0 auto 16px;opacity:0.2;pointer-events:none}
+
+/* Experience - foto spider top right */
+.experience-foto-spider{position:absolute;top:20px;right:20px;width:120px;opacity:0.12;pointer-events:none}
+
 /* Web corner accent on each section */
 .section::after{content:'';position:absolute;top:0;right:0;width:120px;height:120px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='120' cy='0' r='50' fill='none' stroke='%23e23636' stroke-width='0.5'/%3E%3Ccircle cx='120' cy='0' r='80' fill='none' stroke='%23e23636' stroke-width='0.3'/%3E%3Cline x1='120' y1='0' x2='80' y2='80' stroke='%23e23636' stroke-width='0.4'/%3E%3Cline x1='120' y1='0' x2='40' y2='60' stroke='%23e23636' stroke-width='0.3'/%3E%3Cline x1='120' y1='0' x2='120' y2='100' stroke='%23e23636' stroke-width='0.3'/%3E%3C/svg%3E");background-size:contain;background-repeat:no-repeat;opacity:0.15;pointer-events:none}
 
