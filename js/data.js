@@ -122,7 +122,7 @@ const DATA = {
     },
     {
       title: "Sie Acara — Dedicated to School",
-      org: "HMMD · SMA Negeri 1 Pleret",
+      org: "HMMD · SMA Negeri 1 Pl",
       period: "12 – 21 Juni 2025",
       desc: "Merancang model-model teknologi untuk siswa guna memudahkan tugas yang berkaitan dengan teknologi sekolah. Memastikan jadwal kegiatan berjalan lancar dan kondusif.",
       num: "02",
