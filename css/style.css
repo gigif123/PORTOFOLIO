@@ -64,7 +64,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
    ============================================ */
 .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:var(--transition)}
 .navbar.scrolled{background:rgba(11,11,26,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--clr-border);padding:10px 0}
-.nav-container{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-container{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:relative}
 .nav-logo{font-family:var(--ff-mono);font-size:1.25rem;font-weight:700;color:var(--clr-text)}
 .logo-bracket{color:var(--clr-primary)}
 .nav-links{display:flex;gap:8px}
@@ -75,6 +75,10 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav-toggle.open span:nth-child(2){opacity:0;transform:scale(0)}
 .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Hanging spider below nav links */
+.nav-hanging-spider{position:absolute;top:100%;right:120px;width:80px;z-index:999;pointer-events:none;animation:hangingSwing 4s ease-in-out infinite;transform-origin:top center}
+@keyframes hangingSwing{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
 
 /* ============================================
    HERO
@@ -314,8 +318,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
    SPIDER-MAN DECORATIONS
    ============================================ */
 
-/* Hero - hanging Spider-Man next to profile photo */
-.hero-hanging-front{position:absolute;top:60px;left:calc(50% - 200px);width:180px;z-index:10;pointer-events:none;animation:hangingSwing 4s ease-in-out infinite;transform-origin:top center}
+/* Hero - hanging Spider-Man (removed, now in navbar) */
 @keyframes hangingSwing{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
 
 /* Hero - logo below name */
