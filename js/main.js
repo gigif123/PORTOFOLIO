@@ -4,6 +4,22 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ---- Loading Screen ----
+  const loader = document.getElementById('loader');
+  window.addEventListener('load', () => {
+    setTimeout(() => loader.classList.add('hide'), 600);
+  });
+  setTimeout(() => loader.classList.add('hide'), 3000);
+
+  // ---- Scroll to Top ----
+  const scrollTopBtn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
   // ---- AOS (Animate on Scroll) ----
   const aosEls = document.querySelectorAll('[data-aos]');
   const observer = new IntersectionObserver((entries) => {
@@ -178,24 +194,47 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     </div>`).join('');
 
-  // ---- Contact Form ----
+  // ---- Contact Form (Formspree) ----
   const form = document.getElementById('contact-form');
   const feedback = document.getElementById('form-feedback');
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (form._honeypot && form._honeypot.value) return; // spam trap
+    if (form._honeypot && form._honeypot.value) return;
     const btn = form.querySelector('#btn-send');
+    const originalHTML = btn.innerHTML;
     btn.disabled = true;
-    btn.textContent = 'Mengirim...';
-    // Simulate send (integrate with Formspree/EmailJS here)
-    setTimeout(() => {
-      feedback.className = 'form-feedback success';
-      feedback.textContent = '✅ Pesan berhasil dikirim! Saya akan membalas secepatnya.';
-      form.reset();
-      btn.disabled = false;
-      btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Kirim Pesan`;
-      setTimeout(() => { feedback.className = 'form-feedback'; }, 5000);
-    }, 1200);
+    btn.innerHTML = 'Mengirim...';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        feedback.className = 'form-feedback success';
+        feedback.textContent = 'Pesan berhasil dikirim! Saya akan membalas secepatnya.';
+        form.reset();
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      feedback.className = 'form-feedback error';
+      feedback.textContent = 'Gagal mengirim pesan. Silakan coba lagi atau hubungi via email.';
+    }
+    btn.disabled = false;
+    btn.innerHTML = originalHTML;
+    setTimeout(() => { feedback.className = 'form-feedback'; }, 5000);
+  });
+
+  // ---- Download CV (placeholder feedback) ----
+  const cvBtn = document.getElementById('btn-download-cv');
+  cvBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const toast = document.createElement('div');
+    toast.textContent = 'CV belum tersedia. Silakan hubungi via email untuk info lebih lanjut.';
+    toast.style.cssText = 'position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--clr-surface2);color:var(--clr-text);border:1px solid var(--clr-border);padding:12px 24px;border-radius:50px;font-size:.875rem;z-index:9999;animation:slideDown .3s ease;box-shadow:var(--shadow)';
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
   });
 
   // ---- Modal ----

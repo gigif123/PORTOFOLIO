@@ -69,8 +69,11 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .nav-links{display:flex;gap:8px}
 .nav-link{padding:8px 16px;border-radius:50px;color:var(--clr-text-muted);font-size:.9rem;font-weight:500;transition:var(--transition)}
 .nav-link:hover,.nav-link.active{color:var(--clr-primary);background:rgba(99,179,237,0.1)}
-.nav-toggle{display:none;flex-direction:column;gap:5px;padding:4px}
+.nav-toggle{display:none;flex-direction:column;gap:5px;padding:4px;z-index:1001}
 .nav-toggle span{display:block;width:24px;height:2px;background:var(--clr-text);border-radius:2px;transition:var(--transition)}
+.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0;transform:scale(0)}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* ============================================
    HERO
@@ -251,6 +254,30 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .footer-sub{font-size:.78rem;margin-top:4px;color:var(--clr-text-dim)}
 
 /* ============================================
+   SCROLL TO TOP
+   ============================================ */
+.scroll-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--clr-primary),var(--clr-accent));color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(99,179,237,0.3);z-index:900;opacity:0;pointer-events:none;transform:translateY(12px);transition:var(--transition);border:none;cursor:pointer}
+.scroll-top.visible{opacity:1;pointer-events:all;transform:translateY(0)}
+.scroll-top:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(99,179,237,0.45)}
+.scroll-top svg{width:20px;height:20px}
+
+/* ============================================
+   LOADING SCREEN
+   ============================================ */
+.loader{position:fixed;inset:0;z-index:99999;background:var(--clr-bg);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .5s ease,visibility .5s ease}
+.loader.hide{opacity:0;visibility:hidden;pointer-events:none}
+.loader-logo{font-family:var(--ff-mono);font-size:2rem;font-weight:700;color:var(--clr-text);margin-bottom:24px}
+.loader-bar{width:180px;height:3px;background:var(--clr-surface2);border-radius:3px;overflow:hidden}
+.loader-fill{height:100%;width:0;background:linear-gradient(90deg,var(--clr-primary),var(--clr-accent));border-radius:3px;animation:loaderAnim 1.2s ease forwards}
+@keyframes loaderAnim{0%{width:0}50%{width:70%}100%{width:100%}}
+
+/* ============================================
+   FLOAT / PARALLAX PROFILE
+   ============================================ */
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.profile-card{animation:float 6s ease-in-out infinite}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media(max-width:768px){
@@ -260,9 +287,10 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   .profile-img-wrap{width:220px;height:220px}
   .hero-desc,.hero-cta,.hero-socials{justify-content:center}
   .about-grid,.exp-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
-  .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:rgba(10,15,30,0.98);backdrop-filter:blur(20px);flex-direction:column;padding:20px;border-bottom:1px solid var(--clr-border)}
+  .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:rgba(10,15,30,0.98);backdrop-filter:blur(20px);flex-direction:column;padding:20px;border-bottom:1px solid var(--clr-border);animation:slideDown .3s ease}
   .nav-links.open{display:flex}
   .nav-toggle{display:flex}
+  @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
   .projects-grid{grid-template-columns:1fr}
   .section{padding:64px 0}
   .about-highlights{grid-template-columns:1fr}
