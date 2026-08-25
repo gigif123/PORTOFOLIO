@@ -128,13 +128,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectsGrid = document.getElementById('projects-grid');
   const renderProjects = (filter = 'all') => {
     const list = filter === 'all' ? DATA.projects : DATA.projects.filter(p => p.category === filter);
-    projectsGrid.innerHTML = list.map(p => `
+    projectsGrid.innerHTML = list.map(p => {
+      const thumb = p.image
+        ? `<img src="${p.image}" alt="${p.title}" loading="lazy" />`
+        : `<div class="project-thumb-placeholder" style="background:linear-gradient(135deg,${p.color}22,${p.color}44);border-bottom:3px solid ${p.color}"><span style="font-size:.8rem;font-weight:700;color:${p.color};letter-spacing:.1em;text-transform:uppercase">${p.categoryLabel}</span></div>`;
+      return `
       <div class="project-card" data-id="${p.id}" data-category="${p.category}">
-        <div class="project-thumb">
-          <div class="project-thumb-placeholder" style="background:linear-gradient(135deg,${p.color}22,${p.color}44);border-bottom:3px solid ${p.color}">
-            <span style="font-size:.8rem;font-weight:700;color:${p.color};letter-spacing:.1em;text-transform:uppercase">${p.categoryLabel}</span>
-          </div>
-        </div>
+        <div class="project-thumb">${thumb}</div>
         <div class="project-body">
           <p class="project-category">${p.categoryLabel}</p>
           <h3 class="project-title">${p.title}</h3>
@@ -154,7 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
             </button>
           </div>
         </div>
-      </div>`).join('');
+      </div>`;
+    }).join('');
   };
   renderProjects();
 
@@ -226,17 +227,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => { feedback.className = 'form-feedback'; }, 5000);
   });
 
-  // ---- Download CV (placeholder feedback) ----
-  const cvBtn = document.getElementById('btn-download-cv');
-  cvBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const toast = document.createElement('div');
-    toast.textContent = 'CV belum tersedia. Silakan hubungi via email untuk info lebih lanjut.';
-    toast.style.cssText = 'position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--clr-surface2);color:var(--clr-text);border:1px solid var(--clr-border);padding:12px 24px;border-radius:50px;font-size:.875rem;z-index:9999;animation:slideDown .3s ease;box-shadow:var(--shadow)';
-    document.body.appendChild(toast);
-    setTimeout(() => toast.remove(), 3000);
-  });
-
   // ---- Modal ----
   const overlay = document.getElementById('modal-overlay');
   const modalContent = document.getElementById('modal-content');
@@ -245,10 +235,11 @@ document.addEventListener('DOMContentLoaded', () => {
   window.openModal = (id) => {
     const p = DATA.projects.find(x => x.id === id);
     if (!p) return;
+    const thumb = p.image
+      ? `<img src="${p.image}" alt="${p.title}" class="modal-thumb" />`
+      : `<div class="modal-thumb-placeholder" style="background:linear-gradient(135deg,${p.color}22,${p.color}44);border-bottom:3px solid ${p.color}"><span style="font-size:.9rem;font-weight:700;color:${p.color};letter-spacing:.1em;text-transform:uppercase">${p.categoryLabel}</span></div>`;
     modalContent.innerHTML = `
-      <div class="modal-thumb-placeholder" style="background:linear-gradient(135deg,${p.color}22,${p.color}44);border-bottom:3px solid ${p.color}">
-        <span style="font-size:.9rem;font-weight:700;color:${p.color};letter-spacing:.1em;text-transform:uppercase">${p.categoryLabel}</span>
-      </div>
+      ${thumb}
       <p class="modal-category">// ${p.categoryLabel}</p>
       <h2 id="modal-title">${p.title}</h2>
       <div class="project-tags" style="margin:12px 0 20px">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
