@@ -77,8 +77,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* Hanging spider below nav links */
-.nav-hanging-spider{position:absolute;top:100%;right:120px;width:80px;z-index:999;pointer-events:none;animation:hangingSwing 4s ease-in-out infinite;transform-origin:top center}
-@keyframes hangingSwing{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+.nav-hanging-spider{display:none}
 
 /* ============================================
    HERO
@@ -318,7 +317,9 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
    SPIDER-MAN DECORATIONS
    ============================================ */
 
-/* Hero - hanging Spider-Man (removed, now in navbar) */
+/* Hero - hanging Spider-Man next to profile photo */
+.hero-hanging-front{position:absolute;top:80px;left:calc(50% - 240px);width:200px;z-index:10;pointer-events:none;animation:hangingSwing 4s ease-in-out infinite;transform-origin:top center}
+@keyframes hangingSwing{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
 @keyframes hangingSwing{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
 
 /* Hero - logo below name */
