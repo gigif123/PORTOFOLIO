@@ -283,34 +283,33 @@ document.addEventListener('DOMContentLoaded', () => {
   addEventListener('resize', resize);
 
   const dots = [];
-  const MAX_DOTS = 18;
+  const MAX_DOTS = 25;
   let mouseX = -100, mouseY = -100;
 
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-    if (dots.length < MAX_DOTS) {
-      dots.push({ x: mouseX, y: mouseY, life: 1 });
-    }
+    dots.push({ x: mouseX, y: mouseY, life: 1 });
+    if (dots.length > MAX_DOTS) dots.shift();
   });
 
   const drawTrail = () => {
     ctx.clearRect(0, 0, W, H);
     for (let i = dots.length - 1; i >= 0; i--) {
       const d = dots[i];
-      d.life -= 0.035;
+      d.life -= 0.03;
       if (d.life <= 0) { dots.splice(i, 1); continue; }
       ctx.beginPath();
-      ctx.arc(d.x, d.y, 2 * d.life, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(226,54,54,${d.life * 0.5})`;
+      ctx.arc(d.x, d.y, 3 * d.life, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(226,54,54,${d.life * 0.7})`;
       ctx.fill();
       if (i > 0) {
         const prev = dots[i - 1];
         ctx.beginPath();
         ctx.moveTo(d.x, d.y);
         ctx.lineTo(prev.x, prev.y);
-        ctx.strokeStyle = `rgba(226,54,54,${d.life * 0.25})`;
-        ctx.lineWidth = 1;
+        ctx.strokeStyle = `rgba(226,54,54,${d.life * 0.4})`;
+        ctx.lineWidth = 1.5;
         ctx.stroke();
       }
     }
@@ -339,14 +338,12 @@ document.addEventListener('DOMContentLoaded', () => {
     heroWeb.appendChild(webLines);
   }
 
-  // ---- Scroll-triggered web snap effect on project cards ----
+  // ---- Web snap effect on any click ----
   document.addEventListener('click', (e) => {
-    const card = e.target.closest('.project-card');
-    if (!card) return;
-    const rect = card.getBoundingClientRect();
+    if (e.target.closest('.modal-overlay') || e.target.closest('.navbar') || e.target.closest('a') || e.target.closest('button')) return;
     const snap = document.createElement('div');
     snap.className = 'web-snap';
-    snap.style.cssText = `left:${rect.left + rect.width / 2}px;top:${rect.top + rect.height / 2}px`;
+    snap.style.cssText = `left:${e.clientX}px;top:${e.clientY}px`;
     document.body.appendChild(snap);
     setTimeout(() => snap.remove(), 800);
   });
