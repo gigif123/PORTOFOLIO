@@ -359,7 +359,10 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .contact .section-deco{position:absolute;bottom:20px;right:20px;width:80px;opacity:0.1;pointer-events:none}
 
 /* Footer - tiduran spider */
-.footer-tiduran{display:block;width:150px;margin:0 auto 16px;opacity:0.2;pointer-events:none}
+.footer-tiduran{display:none}
+
+/* Contact - tiduran spider above form */
+.contact-tiduran{display:block;width:180px;margin:0 auto 20px;opacity:0.7;pointer-events:none}
 
 /* Experience - foto spider top right */
 .experience-foto-spider{position:absolute;top:20px;right:20px;width:120px;opacity:0.12;pointer-events:none}
