@@ -271,52 +271,6 @@ document.addEventListener('DOMContentLoaded', () => {
   //  SPIDER-MAN EFFECTS
   // ============================================
 
-  // ---- Web Trail Cursor ----
-  const canvas = document.createElement('canvas');
-  canvas.id = 'web-canvas';
-  canvas.style.cssText = 'position:fixed;inset:0;z-index:9998;pointer-events:none';
-  document.body.appendChild(canvas);
-  const ctx = canvas.getContext('2d');
-  let W, H;
-  const resize = () => { W = canvas.width = innerWidth; H = canvas.height = innerHeight; };
-  resize();
-  addEventListener('resize', resize);
-
-  const dots = [];
-  const MAX_DOTS = 25;
-  let mouseX = -100, mouseY = -100;
-
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    dots.push({ x: mouseX, y: mouseY, life: 1 });
-    if (dots.length > MAX_DOTS) dots.shift();
-  });
-
-  const drawTrail = () => {
-    ctx.clearRect(0, 0, W, H);
-    for (let i = dots.length - 1; i >= 0; i--) {
-      const d = dots[i];
-      d.life -= 0.03;
-      if (d.life <= 0) { dots.splice(i, 1); continue; }
-      ctx.beginPath();
-      ctx.arc(d.x, d.y, 3 * d.life, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(226,54,54,${d.life * 0.7})`;
-      ctx.fill();
-      if (i > 0) {
-        const prev = dots[i - 1];
-        ctx.beginPath();
-        ctx.moveTo(d.x, d.y);
-        ctx.lineTo(prev.x, prev.y);
-        ctx.strokeStyle = `rgba(226,54,54,${d.life * 0.4})`;
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
-      }
-    }
-    requestAnimationFrame(drawTrail);
-  };
-  drawTrail();
-
   // ---- Hero Web-Shoot Lines ----
   const heroWeb = document.querySelector('.hero-web');
   if (heroWeb) {
