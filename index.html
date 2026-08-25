@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portofolio pribadi Zaril Gifari — Software Developer, IoT Engineer & Multimedia Designer. Mahasiswa Informatika Universitas Amikom Yogyakarta." />
+  <meta name="keywords" content="Zaril Gifari, portofolio, developer, IoT, software, mahasiswa, Amikom Yogyakarta" />
+  <meta property="og:title" content="Zaril Gifari | Developer Portfolio" />
+  <meta property="og:description" content="Portofolio pribadi Zaril Gifari — Software Developer, IoT Engineer & Multimedia Designer" />
+  <title>Zaril Gifari | Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" id="nav-logo">
+        <span class="logo-bracket">&lt;</span>Zaril<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active">Beranda</a></li>
+        <li><a href="#about" class="nav-link">Tentang</a></li>
+        <li><a href="#skills" class="nav-link">Keahlian</a></li>
+        <li><a href="#projects" class="nav-link">Proyek</a></li>
+        <li><a href="#experience" class="nav-link">Pengalaman</a></li>
+        <li><a href="#contact" class="nav-link">Kontak</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO / BERANDA ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-glow glow-1"></div>
+      <div class="hero-glow glow-2"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-text" data-aos="fade-right">
+        <p class="hero-greeting">Halo, saya</p>
+        <h1 class="hero-name">Zaril Gifari</h1>
+        <div class="hero-role">
+          <span class="role-prefix">Seorang </span>
+          <span class="typed-text" id="typed-text"></span>
+          <span class="cursor-blink">|</span>
+        </div>
+        <p class="hero-desc">
+          Mahasiswa Informatika <strong>Universitas Amikom Yogyakarta</strong> dengan keahlian di bidang
+          <strong>Software Development</strong>, <strong>IoT</strong>, dan <strong>Multimedia</strong>.
+          Membangun solusi modern dari baris kode hingga sirkuit elektronik.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary" id="btn-lihat-proyek">
+            <span>Lihat Proyek</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-outline" id="btn-hubungi">Hubungi Saya</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/gifarzaril" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub" id="social-github-hero">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/zarilgifari" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn" id="social-linkedin-hero">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:gifarzaril@gmail.com" class="social-icon" aria-label="Email" id="social-email-hero">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual" data-aos="fade-left">
+        <div class="profile-card">
+          <div class="profile-ring"></div>
+          <div class="profile-img-wrap">
+            <img src="assets/foto.jpeg" alt="Foto profil Zaril" class="profile-img" id="profile-img" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- ===== TENTANG SAYA ===== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">// about_me</span>
+        <h2 class="section-title">Tentang Saya</h2>
+        <p class="section-subtitle">Kenali lebih dekat siapa Zaril</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text" data-aos="fade-right">
+          <p class="about-desc">
+            Saya adalah mahasiswa Informatika di <strong>Universitas Amikom Yogyakarta</strong> dengan
+          spesialisasi dalam pengembangan perangkat lunak, web, Internet of Things (IoT), dan multimedia.
+          Memiliki keahlian teknis dalam pemrograman C#, C++, Python, JavaScript, serta pengembangan
+          web modern dengan Node.js, React, Laravel, dan Supabase.
+        </p>
+        <p class="about-desc">
+          Aktif terlibat dalam kepanitiaan dan kegiatan kampus, dengan dedikasi tinggi untuk mempelajari
+          teknologi jaringan, multimedia, dan analisa data. Saya percaya teknologi terbaik lahir dari
+          kolaborasi, kreativitas, dan semangat belajar tanpa henti.
+        </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <span class="highlight-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </span>
+              <span>Problem Solver</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              </span>
+              <span>IoT Enthusiast</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </span>
+              <span>Fast Learner</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </span>
+              <span>Creative Thinker</span>
+            </div>
+          </div>
+          <a href="#" class="btn btn-primary btn-sm" id="btn-download-cv">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download CV
+          </a>
+        </div>
+        <div class="about-edu" data-aos="fade-left">
+          <h3 class="edu-title">Riwayat Pendidikan</h3>
+          <div class="edu-timeline">
+            <div class="edu-item">
+              <div class="edu-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <div class="edu-info">
+                <h4>S1 Informatika</h4>
+                <p class="edu-inst">Universitas Amikom Yogyakarta</p>
+                <p class="edu-year">2024 — Sekarang</p>
+                <p class="edu-desc">Fokus: Pengembangan Software, Internet of Things (IoT), dan Multimedia.</p>
+              </div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <div class="edu-info">
+                <h4>SMA Negeri 4 Maturan</h4>
+                <p class="edu-inst">Jurusan Matematika & Ilmu Pengetahuan Alam (IPA)</p>
+                <p class="edu-year">2021 — 2024</p>
+                <p class="edu-desc">Membangun fondasi matematika, sains, dan logika komputasi.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KEAHLIAN TEKNIS ===== -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">// tech_skills</span>
+        <h2 class="section-title">Keahlian Teknis</h2>
+        <p class="section-subtitle">Tools & teknologi yang saya kuasai</p>
+      </div>
+      <div class="skills-tabs" data-aos="fade-up">
+        <button class="tab-btn active" data-tab="programming" id="tab-programming">Pemrograman & Software</button>
+        <button class="tab-btn" data-tab="hardware" id="tab-hardware">Hardware & IoT</button>
+        <button class="tab-btn" data-tab="multimedia" id="tab-multimedia">Multimedia & Design</button>
+      </div>
+      <div class="skills-content">
+        <div class="tab-panel active" id="panel-programming" data-aos="fade-up">
+          <div class="skills-grid" id="skills-programming"></div>
+        </div>
+        <div class="tab-panel" id="panel-hardware">
+          <div class="skills-grid" id="skills-hardware"></div>
+        </div>
+        <div class="tab-panel" id="panel-multimedia">
+          <div class="skills-grid" id="skills-multimedia"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROYEK UNGGULAN ===== -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">// featured_projects</span>
+        <h2 class="section-title">Proyek Unggulan</h2>
+        <p class="section-subtitle">Karya nyata yang membuktikan kompetensi</p>
+      </div>
+      <div class="project-filters" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all" id="filter-all">Semua</button>
+        <button class="filter-btn" data-filter="web" id="filter-web">Web Dev</button>
+        <button class="filter-btn" data-filter="iot" id="filter-iot">IoT</button>
+        <button class="filter-btn" data-filter="mobile" id="filter-mobile">Mobile</button>
+        <button class="filter-btn" data-filter="data" id="filter-data">Data Science</button>
+      </div>
+      <div class="projects-grid" id="projects-grid" data-aos="fade-up"></div>
+    </div>
+  </section>
+
+  <!-- ===== PENGALAMAN & SERTIFIKASI ===== -->
+  <section class="experience section" id="experience">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">// experience_&_certs</span>
+        <h2 class="section-title">Pengalaman & Sertifikasi</h2>
+        <p class="section-subtitle">Rekam jejak organisasi dan pencapaian</p>
+      </div>
+      <div class="exp-grid">
+        <div class="exp-col" data-aos="fade-right">
+          <h3 class="exp-col-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Pengalaman Organisasi
+          </h3>
+          <div class="timeline" id="experience-timeline"></div>
+        </div>
+        <div class="exp-col" data-aos="fade-left">
+          <h3 class="exp-col-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Sertifikasi
+          </h3>
+          <div class="certs-grid" id="certs-grid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KONTAK ===== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">// get_in_touch</span>
+        <h2 class="section-title">Hubungi Saya</h2>
+        <p class="section-subtitle">Mari berkolaborasi atau sekadar menyapa!</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-card" id="contact-email-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:gifarzaril@gmail.com" id="email-link">gifarzaril@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-card" id="contact-location-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h4>Lokasi</h4>
+              <p>Yogyakarta, Indonesia</p>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <h4>Temukan Saya Di</h4>
+            <div class="socials-row">
+              <a href="https://github.com/gifarzaril" target="_blank" rel="noopener" class="social-pill" id="social-github">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+              <a href="https://linkedin.com/in/zarilgifari" target="_blank" rel="noopener" class="social-pill" id="social-linkedin">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+              <a href="https://instagram.com/gifairy_" target="_blank" rel="noopener" class="social-pill" id="social-instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form" data-aos="fade-left" novalidate>
+          <div class="form-group">
+            <label for="contact-name">Nama</label>
+            <input type="text" id="contact-name" name="name" placeholder="Nama Anda" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="email" placeholder="email@contoh.com" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Subjek</label>
+            <input type="text" id="contact-subject" name="subject" placeholder="Perihal pesan Anda" required />
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Pesan</label>
+            <textarea id="contact-message" name="message" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+          </div>
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off" />
+          <button type="submit" class="btn btn-primary btn-full" id="btn-send">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Kirim Pesan
+          </button>
+          <div class="form-feedback" id="form-feedback"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 <strong>Zaril Gifari</strong>.</p>
+      <p class="footer-sub">Designed & Built by Zaril</p>
+    </div>
+  </footer>
+
+  <!-- ===== PROJECT MODAL ===== -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box" id="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Tutup modal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-content" id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
