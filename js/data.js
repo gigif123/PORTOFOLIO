@@ -59,7 +59,7 @@ const DATA = {
       result: "Platform berhasil mengotomatisasi proses pengelolaan limbah dan meningkatkan efisiensi pencatatan data dibandingkan sistem manual sebelumnya.",
       tags: ["Supabase", "JavaScript", "HTML/CSS", "Web Modern"],
       demo: "#",
-      repo: "https://github.com/",
+      repo: "https://github.com/gigif123/PORTOFOLIO",
     },
     {
       id: 2,
@@ -75,7 +75,7 @@ const DATA = {
       result: "Sistem CRUD mahasiswa berfungsi penuh dengan arsitektur terpisah antara frontend dan backend, komunikasi API berjalan lancar, dan data tersimpan aman di MongoDB Atlas.",
       tags: ["React", "TypeScript", "NestJS", "MongoDB Atlas", "REST API", "Axios"],
       demo: "#",
-      repo: "https://github.com/",
+      repo: "https://github.com/gigif123/PORTOFOLIO",
     },
     {
       id: 3,
@@ -91,7 +91,7 @@ const DATA = {
       result: "Proyek berhasil dipresentasikan sebagai karya IoT di Ignition Informatika Universitas Amikom Yogyakarta (Feb 2026) dengan performa akses kunci yang akurat dan responsif.",
       tags: ["Arduino IDE", "ESP32", "RFID", "IoT", "C++"],
       demo: "#",
-      repo: "https://github.com/",
+      repo: "https://github.com/gigif123/PORTOFOLIO",
     },
     {
       id: 4,
@@ -107,7 +107,7 @@ const DATA = {
       result: "Menemukan bahwa jumlah ulasan (Reviews) adalah prediktor paling dominan (korelasi 0.958). Model berhasil memprediksi dengan akurat dan divisualisasikan secara interaktif.",
       tags: ["Python", "scikit-learn", "HTML/CSS", "JavaScript", "Chart.js"],
       demo: "#",
-      repo: "https://github.com/",
+      repo: "https://github.com/gigif123/PORTOFOLIO",
     },
   ],
 
