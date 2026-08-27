@@ -59,7 +59,7 @@ const DATA = {
       result: "Platform berhasil mengotomatisasi proses pengelolaan limbah dan meningkatkan efisiensi pencatatan data dibandingkan sistem manual sebelumnya.",
       tags: ["Supabase", "JavaScript", "HTML/CSS", "Web Modern"],
       demo: "#",
-      repo: "https://github.com/gigif123/PORTOFOLIO",
+      repo: "https://github.com/gigif123/DILOAK",
     },
     {
       id: 2,
@@ -75,7 +75,7 @@ const DATA = {
       result: "Sistem CRUD mahasiswa berfungsi penuh dengan arsitektur terpisah antara frontend dan backend, komunikasi API berjalan lancar, dan data tersimpan aman di MongoDB Atlas.",
       tags: ["React", "TypeScript", "NestJS", "MongoDB Atlas", "REST API", "Axios"],
       demo: "#",
-      repo: "https://github.com/gigif123/PORTOFOLIO",
+      repo: "https://github.com/gigif123/student_management",
     },
     {
       id: 3,
