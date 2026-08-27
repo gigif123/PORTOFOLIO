@@ -145,6 +145,8 @@ const DATA = {
 
   // ---- CERTIFICATIONS ----
   certs: [
+    { name: "Asisten Praktikum Komputer Grafis",  issuer: "Universitas Amikom Yogyakarta",         year: "Semester Genap 2025/2026" },
+    { name: "Asisten Praktikum Sistem Operasi",   issuer: "Universitas Amikom Yogyakarta",         year: "Semester Genap 2025/2026" },
     { name: "Introduction to Networks",           issuer: "Cisco Networking Academy",              year: "Feb 2026" },
     { name: "Ignition Informatika — Kategori IoT", issuer: "Universitas Amikom Yogyakarta",         year: "Feb 2026" },
     { name: "Seminar Pemilihan",                   issuer: "Universitas Amikom Yogyakarta",         year: "Mar 2026" },

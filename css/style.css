@@ -361,9 +361,6 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 /* Footer - tiduran spider */
 .footer-tiduran{display:none}
 
-/* Contact - tiduran spider next to subtitle */
-.contact-tiduran{display:inline-block;width:100px;margin-left:12px;vertical-align:middle;opacity:0.8;pointer-events:none}
-
 /* Experience - foto spider top right */
 .experience-foto-spider{position:absolute;top:20px;right:20px;width:120px;opacity:0.12;pointer-events:none}
 
